@@ -12,7 +12,7 @@ public class FindElementInArray {
 
     }
 
-    public static void findName(String input_name , String students []) {
+    public static void findName(String input_name , String[] students) {
         boolean isExist = false;
         for(int i = 0; i <students.length ; i++){
             if(students[i].equals(input_name)) {
