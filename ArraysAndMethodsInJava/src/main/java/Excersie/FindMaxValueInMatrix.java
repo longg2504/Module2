@@ -7,7 +7,7 @@ public class FindMaxValueInMatrix {
         findMaxValueInMatrix();
     }
 
-    public static void findMaxValueInMatrix(){
+    public static int [][] inputarray2d(){
         System.out.println("Nhap vao chieu dai cua matrix");
         int x = scanner.nextInt();
         System.out.println("Nhap vao do dai cua mot dong trong matrix");
@@ -19,6 +19,11 @@ public class FindMaxValueInMatrix {
                 matrix[row][col] = scanner.nextInt();
             }
         }
+        return matrix;
+    }
+
+    public static void findMaxValueInMatrix(){
+        int [][] matrix = inputarray2d();
         int max = matrix[0][0];
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
