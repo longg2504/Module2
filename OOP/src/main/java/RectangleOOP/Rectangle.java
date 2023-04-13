@@ -1,4 +1,4 @@
-package Ecersise;
+package RectangleOOP;
 public class Rectangle {
         double width , height;
 
