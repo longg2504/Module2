@@ -11,7 +11,6 @@ public class TestMyLinkedList {
         ll.addFirst(61);
 
 
-
         ll.add(4,9);
         ll.add(4,9);
         ll.add(5,20);
