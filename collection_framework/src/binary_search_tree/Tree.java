@@ -13,5 +13,7 @@ public interface Tree<E>{
     /**
      * Get the number of nodes in the tree
      */
+
+    public void postorder();
     public int getSize();
 }
