@@ -23,6 +23,13 @@ public class TestBST {
 
         tree.delete("George");
         tree.postorder();
+        System.out.println("The number of nodes is: " + tree.getSize());
+
+        System.out.println("Preorder (sorted):");
+        tree.preorder();
+        System.out.println("The number of nodes is: " + tree.getSize());
+
+
 
 
 
