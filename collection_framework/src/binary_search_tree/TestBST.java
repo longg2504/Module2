@@ -21,6 +21,10 @@ public class TestBST {
         tree.postorder();
         System.out.println("The number of nodes is: " + tree.getSize());
 
+        tree.delete("George");
+        tree.postorder();
+
+
 
     }
 }

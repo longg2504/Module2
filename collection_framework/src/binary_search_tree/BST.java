@@ -71,4 +71,61 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
         postorder(root.right);
         System.out.print(root.element + " ");
     }
+    protected boolean delete(E e) {
+        TreeNode<E> current = root;
+        TreeNode<E> parent = null;
+        boolean isLeftChild = false;
+
+        // Search for the node containing the element to be deleted
+        while (current != null && !current.element.equals(e)) {
+            parent = current;
+
+            if (e.compareTo(current.element) < 0) {
+                current = current.left;
+                isLeftChild = true;
+            } else {
+                current = current.right;
+                isLeftChild = false;
+            }
+        }
+
+        // If the element is not found, return true
+        if (current == null) {
+            return true;
+        }
+
+        // Case 1: The node to be deleted has no left child
+        if (current.left == null) {
+            if (current == root) {
+                root = current.right;
+            } else if (isLeftChild) {
+                parent.left = current.right;
+            } else {
+                parent.right = current.right;
+            }
+        }
+        // Case 2: The node to be deleted has a left child
+        else {
+            TreeNode<E> rightmost = current.left;
+            TreeNode<E> parentOfRightmost = current;
+
+            while (rightmost.right != null) {
+                parentOfRightmost = rightmost;
+                rightmost = rightmost.right;
+            }
+
+            current.element = rightmost.element;
+
+            if (parentOfRightmost == current) {
+                parentOfRightmost.left = rightmost.left;
+            } else {
+                parentOfRightmost.right = rightmost.left;
+            }
+        }
+
+        return true; // Element deleted
+    }
+
+
+
 }
