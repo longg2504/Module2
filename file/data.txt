@@ -1,0 +1,7 @@
+Nguyễn Văn A,20,8.5	
+Nguyễn Văn A,21,8.5	
+Nguyễn Văn A,22,8.5	
+Nguyễn Văn A,23,8.5	
+Nguyễn Văn A,24,8.5	
+Nguyễn Văn A,25,8.5	
+
