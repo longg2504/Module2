@@ -1,16 +1,15 @@
 package views;
+
 import model.ECategory;
 import model.Product;
 import services.ProductServiceInFile;
 import utils.DateUtils;
-import services.ProductServiceInMemory;
-
-import javax.sound.midi.MidiDevice;
-import java.util.ArrayList;
+import utils.CSVUtils;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 public class ProductView {
+    private final static String PATH = "./src/data/product.csv";
     private Scanner scanner = new Scanner(System.in);
     private ProductServiceInFile productService;
 
@@ -44,6 +43,7 @@ public class ProductView {
                     long idDelete = Long.parseLong(scanner.nextLine());
                     productService.deleteProduct(idDelete);
                     showProducts(productService.findAllProducts());
+                    break;
                 case 4:
                     System.out.println("nhập vào loại muốn sort");
                     System.out.println("1.Phone");
@@ -57,9 +57,15 @@ public class ProductView {
                             productService.showProductName("Máy Tính Bảng");
                             break;
                     }
-
-
-
+                case 5:
+                    showProducts(productService.findAllProducts());
+                    System.out.println("nhập vào ID sản phẩm bạn muốn tìm kiếm:");
+                    long id = Long.parseLong(scanner.nextLine());
+                    productService.findProduct(id);
+                    break;
+                case 6:
+                    System.out.println(CSVUtils.read(PATH));
+                    break;
             }
         }while (true);
 

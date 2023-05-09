@@ -80,4 +80,7 @@ public class Product {
         return String.format("%s,%s,%s,%s,%s,%s",this.id, this.name, this.description, this.price,
                 DateUtils.format(this.createAt), this.eCategory);
     }
+
+
+
 }
